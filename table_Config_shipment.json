@@ -1,0 +1,289 @@
+{
+  "tableName": "shipments",
+  "tableType": "REALTIME",
+  "segmentsConfig": {
+    "timeColumnName": "created_at",
+    "timeType": "MILLISECONDS",
+    "replication": "1"
+  },
+  "tableIndexConfig": {
+    "loadMode": "MMAP",
+    "nullHandlingEnabled": true
+  },
+  "ingestionConfig": {
+    "transformConfigs": [
+      {
+        "columnName": "id",
+        "transformFunction": "JSONPATHLONG(after, '$.id')"
+      },
+      {
+        "columnName": "order_id",
+        "transformFunction": "JSONPATHLONG(after, '$.order_id')"
+      },
+      {
+        "columnName": "company_id",
+        "transformFunction": "JSONPATHLONG(after, '$.company_id')"
+      },
+      {
+        "columnName": "channel_id",
+        "transformFunction": "JSONPATHLONG(after, '$.channel_id')"
+      },
+      {
+        "columnName": "invoice_no",
+        "transformFunction": "JSONPATHSTRING(after, '$.invoice_no')"
+      },
+      {
+        "columnName": "encrypt_invoice_name",
+        "transformFunction": "JSONPATHSTRING(after, '$.encrypt_invoice_name')"
+      },
+      {
+        "columnName": "courier",
+        "transformFunction": "JSONPATHSTRING(after, '$.courier')"
+      },
+      {
+        "columnName": "sr_courier_id",
+        "transformFunction": "JSONPATHLONG(after, '$.sr_courier_id')"
+      },
+      {
+        "columnName": "code",
+        "transformFunction": "JSONPATHSTRING(after, '$.code')"
+      },
+      {
+        "columnName": "awb",
+        "transformFunction": "JSONPATHSTRING(after, '$.awb')"
+      },
+      {
+        "columnName": "pickup_token_number",
+        "transformFunction": "JSONPATHSTRING(after, '$.pickup_token_number')"
+      },
+      {
+        "columnName": "dhl_handover_id",
+        "transformFunction": "JSONPATHSTRING(after, '$.dhl_handover_id')"
+      },
+      {
+        "columnName": "dhl_handover_url",
+        "transformFunction": "JSONPATHSTRING(after, '$.dhl_handover_url')"
+      },
+      {
+        "columnName": "pickup_address_id",
+        "transformFunction": "JSONPATHLONG(after, '$.pickup_address_id')"
+      },
+      {
+        "columnName": "pickup_reshedule_count",
+        "transformFunction": "JSONPATHDOUBLE(after, '$.pickup_reshedule_count')"
+      },
+      {
+        "columnName": "return_pickup_address_id",
+        "transformFunction": "JSONPATHDOUBLE(after, '$.return_pickup_address_id')"
+      },
+      {
+        "columnName": "dhl_pickup_url",
+        "transformFunction": "JSONPATHSTRING(after, '$.dhl_pickup_url')"
+      },
+      {
+        "columnName": "method",
+        "transformFunction": "JSONPATHSTRING(after, '$.method')"
+      },
+      {
+        "columnName": "channel_shipment_id",
+        "transformFunction": "JSONPATHSTRING(after, '$.channel_shipment_id')"
+      },
+      {
+        "columnName": "weight",
+        "transformFunction": "JSONPATHSTRING(after, '$.weight')"
+      },
+      {
+        "columnName": "dimensions",
+        "transformFunction": "JSONPATHSTRING(after, '$.dimensions')"
+      },
+      {
+        "columnName": "volumetric_weight",
+        "transformFunction": "JSONPATHSTRING(after, '$.volumetric_weight')"
+      },
+      {
+        "columnName": "quantity",
+        "transformFunction": "JSONPATHDOUBLE(after, '$.quantity')"
+      },
+      {
+        "columnName": "status",
+        "transformFunction": "JSONPATHDOUBLE(after, '$.status')"
+      },
+      {
+        "columnName": "state_type",
+        "transformFunction": "JSONPATHDOUBLE(after, '$.state_type')"
+      },
+      {
+        "columnName": "sub_status",
+        "transformFunction": "JSONPATHDOUBLE(after, '$.sub_status')"
+      },
+      {
+        "columnName": "status_code",
+        "transformFunction": "JSONPATHSTRING(after, '$.status_code')"
+      },
+      {
+        "columnName": "shipment_zone",
+        "transformFunction": "JSONPATHDOUBLE(after, '$.shipment_zone')"
+      },
+      {
+        "columnName": "label_url",
+        "transformFunction": "JSONPATHSTRING(after, '$.label_url')"
+      },
+      {
+        "columnName": "manifest_url",
+        "transformFunction": "JSONPATHSTRING(after, '$.manifest_url')"
+      },
+      {
+        "columnName": "is_locked",
+        "transformFunction": "JSONPATHSTRING(after, '$.is_locked')"
+      },
+      {
+        "columnName": "customer_gstin",
+        "transformFunction": "JSONPATHSTRING(after, '$.customer_gstin')"
+      },
+      {
+        "columnName": "eway_bill_number",
+        "transformFunction": "JSONPATHSTRING(after, '$.eway_bill_number')"
+      },
+      {
+        "columnName": "pod",
+        "transformFunction": "JSONPATHSTRING(after, '$.pod')"
+      },
+      {
+        "columnName": "frozen_weight",
+        "transformFunction": "JSONPATHDOUBLE(after, '$.frozen_weight')"
+      },
+      {
+        "columnName": "isd_code",
+        "transformFunction": "JSONPATHSTRING(after, '$.isd_code')"
+      },
+      {
+        "columnName": "seller_address",
+        "transformFunction": "JSONPATHSTRING(after, '$.seller_address')"
+      },
+      {
+        "columnName": "shipping_address",
+        "transformFunction": "JSONPATHSTRING(after, '$.shipping_address')"
+      },
+      {
+        "columnName": "customer_details",
+        "transformFunction": "JSONPATHSTRING(after, '$.customer_details')"
+      },
+      {
+        "columnName": "comment",
+        "transformFunction": "JSONPATHSTRING(after, '$.comment')"
+      },
+      {
+        "columnName": "cost_string",
+        "transformFunction": "JSONPATH(after, '$.cost')"
+      },
+      {
+        "columnName": "others",
+        "transformFunction": "JSONPATHSTRING(after, '$.others')"
+      },
+      {
+        "columnName": "invoice_date",
+        "transformFunction": "JSONPATHLONG(after, '$.invoice_date')"
+      },
+      {
+        "columnName": "awb_assign_date",
+        "transformFunction": "JSONPATHLONG(after, '$.awb_assign_date')"
+      },
+      {
+        "columnName": "pickup_generated_date",
+        "transformFunction": "JSONPATHLONG(after, '$.pickup_generated_date')"
+      },
+      {
+        "columnName": "pickup_scheduled_date",
+        "transformFunction": "JSONPATHLONG(after, '$.pickup_scheduled_date')"
+      },
+      {
+        "columnName": "out_for_pickup_date",
+        "transformFunction": "JSONPATHSTRING(after, '$.out_for_pickup_date')"
+      },
+      {
+        "columnName": "created_at",
+        "transformFunction": "JSONPATHSTRING(after, '$.created_at')"
+      },
+      {
+        "columnName": "updated_at",
+        "transformFunction": "JSONPATHSTRING(after, '$.updated_at')"
+      },
+      {
+        "columnName": "rto_initiated_date",
+        "transformFunction": "JSONPATHSTRING(after, '$.rto_initiated_date')"
+      },
+      {
+        "columnName": "rto_delivered_date",
+        "transformFunction": "JSONPATHSTRING(after, '$.rto_delivered_date')"
+      },
+      {
+        "columnName": "updated_on",
+        "transformFunction": "JSONPATHSTRING(after, '$.updated_on')"
+      },
+      {
+        "columnName": "etd",
+        "transformFunction": "JSONPATHLONG(after, '$.etd')"
+      },
+      {
+        "columnName": "promised_pickup_tat",
+        "transformFunction": "JSONPATHDOUBLE(after, '$.promised_pickup_tat')"
+      },
+      {
+        "columnName": "promised_delivery_tat",
+        "transformFunction": "JSONPATHDOUBLE(after, '$.promised_delivery_tat')"
+      },
+      {
+        "columnName": "promised_rto_tat",
+        "transformFunction": "JSONPATHDOUBLE(after, '$.promised_rto_tat')"
+      },
+      {
+        "columnName": "promised_cod_remittance_tat",
+        "transformFunction": "JSONPATHDOUBLE(after, '$.promised_cod_remittance_tat')"
+      },
+      {
+        "columnName": "shipped_date",
+        "transformFunction": "JSONPATHSTRING(after, '$.shipped_date')"
+      },
+      {
+        "columnName": "delivered_date",
+        "transformFunction": "JSONPATHSTRING(after, '$.delivered_date')"
+      },
+      {
+        "columnName": "returned_date",
+        "transformFunction": "JSONPATHSTRING(after, '$.returned_date')"
+      },
+      {
+        "columnName": "eway_bill_date",
+        "transformFunction": "JSONPATHSTRING(after, '$.returned_date')"
+      },
+      {
+        "columnName": "mps_data",
+        "transformFunction": "JSONPATHSTRING(after, '$.returned_date')"
+      }
+    ],
+    "streamIngestionConfig": {
+      "streamConfigMaps": [
+        {
+          "streamType": "kafka",
+          "stream.kafka.consumer.type": "lowlevel",
+          "stream.kafka.decoder.prop.format": "AVRO",
+          "stream.kafka.decoder.prop.schema.registry.schema.name": "source_multichannel_avro.multichannel.shipments.Envelope.before",
+          "stream.kafka.decoder.prop.schema.registry.rest.url": "http://schema-registry-inhouse.sr-bi-internal.in:8081",
+          "stream.kafka.topic.name": "source_multichannel_avro.multichannel.shipments",
+          "stream.kafka.consumer.factory.class.name": "org.apache.pinot.plugin.stream.kafka20.KafkaConsumerFactory",
+          "stream.kafka.decoder.class.name": "org.apache.pinot.plugin.inputformat.avro.confluent.KafkaConfluentSchemaRegistryAvroMessageDecoder",
+          "stream.kafka.broker.list": "kafka-inhouse.sr-bi-internal.in:9094",
+          "stream.kafka.schema.registry.url": "http://schema-registry-inhouse.sr-bi-internal.in:8081",
+          "realtime.segment.flush.threshold.rows": "0",
+          "realtime.segment.flush.threshold.time": "24h",
+          "realtime.segment.flush.threshold.segment.size": "50M",
+          "stream.kafka.consumer.prop.auto.offset.reset": "smallest"
+        }
+      ]
+    }
+  },
+  "tenants": {},
+  "metadata": {
+    "customConfigs": {}
+  }
+}
