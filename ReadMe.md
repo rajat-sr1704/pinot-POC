@@ -1,4 +1,6 @@
-# **Running Pinot with Kubernetes (Minikube)**
+# **PINOT BENCHMARKING POC**
+
+## **Running Pinot with Kubernetes (Minikube)**
 
 ## **Prerequisites**
 
