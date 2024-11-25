@@ -85,8 +85,8 @@ Create Schema and Table Configuration
 
 Copy the schema and table configuration files to the running Pinot cluster’s pod:
 ```bash
-kubectl cp ./table-schema-shipments.json pinot-controller-0:/opt/pinot/data/table-schema-shipments.json -n pinot-benchmark
-kubectl cp ./tableConfig-shipments.json pinot-controller-0:/opt/pinot/data/tableConfig-shipments.json -n pinot-benchmark
+kubectl cp ./table_schema_shipment.json pinot-controller-0:/opt/pinot/data/table-schema-shipment.json -n pinot-benchmark
+kubectl cp ./table_Config_shipment.json pinot-controller-0:/opt/pinot/data/table-config-shipment.json -n pinot-benchmark
 ```
 **Add the Table**
 
